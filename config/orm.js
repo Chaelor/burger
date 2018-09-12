@@ -58,8 +58,10 @@ const orm = {
         });
     },
     updateOne: function (tableInput, colVals, condition, cb) {
+        
         var queryString = `UPDATE ${tableInput} SET ${objToSql(colVals)} WHERE ${condition};`
-
+        
+        console.log("line 64 orm.js " + colVals);
         console.log(queryString);
 
         connection.query(queryString, (err, res) => {
