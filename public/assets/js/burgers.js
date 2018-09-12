@@ -35,12 +35,11 @@ function changeListener(event) {
 
     //capture the data from the id for routing and if burger has been devoured
     var id = this.dataset.id;
-    var newDevoured = this.dataset.newdevoured;
-
-    console.log(newDevoured);
+    var devoured = this.dataset.newdevoured;
+    
     //data to pass for the devoured state
     var newState = {
-        devoured: newDevoured
+        devoured: devoured
     };
 
     console.log(newState);
