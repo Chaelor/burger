@@ -1,38 +1,55 @@
-<h1>Burgers!</h1>
+<div class="container">
 
-<h2>Uneaten burgers</h2>
+	<div class="header">
+		<h1>Burgers!</h1>
+		<div class="img">
+			<img src="./assets/img/burger.jpg" alt="Burger Graphic" class="burger-image">
+		</div>
+	</div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+	<div class="burger-area">
+		<div class="uneaten-burger">
+			<h2>Uneaten</h2>
+			<h2 class="spacing">burgers</h2>
 
-<h2>Regurgitate these</h2>
+			<ul>
+				{{#each burgers}}
+				{{#unless devoured}}
+				{{> burgers/burger-block devoured=true}}
+				{{/unless}}
+				{{/each}}
+			</ul>
+		</div>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+		<div class="eaten-burger">
+			<h2 class="spacing">Regurgitate these</h2>
 
-<h2>Add a Meatless Burger</h2>
-<form class="create-form">
+			<ul>
+				{{#each burgers}}
+				{{#if devoured}}
+				{{> burgers/burger-block devoured=false}}
+				{{/if}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="add-burger" name="name">
-  </div>
+	<div class="create-burger">
+		<h2 class="spacing">Add a Meatless Burger</h2>
+		<form class="create-form">
 
-  <div class="form-group">
-    <label for="sleepy">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Free for consumption
-  </div>
+			<div class="form-group">
+				<label for="ca">Burger Name:</label>
+				<input type="text" id="add-burger" name="name">
+			</div>
 
-  <button class="add-burger">Add Burger</button>
-</form>
+			<div class="form-group">
+				<label for="sleepy">Devoured?</label><br>
+				<input type="radio" name="devoured" value="1" checked> Devoured!<br>
+				<input type="radio" name="devoured" value="0"> Free for consumption
+			</div>
+
+			<button class="add-burger">Add Burger</button>
+		</form>
+	</div>
+</div>

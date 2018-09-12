@@ -1,0 +1,72 @@
+/****************************
+Globals
+*/
+.container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size:2.5em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+h2{
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+li{
+    padding: 10px;
+}
+/****************************
+        Header
+*/
+.header{
+    position: relative;
+}
+
+.burger-image{
+    width: 250px;
+    height: 250px;
+    margin-left: 180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/****************************
+        Burgers
+*/
+
+.spacing{
+    margin-bottom: 30px;
+}
+
+.eaten-burger{
+    float: right;
+    width: 275px;
+    margin: 5px;
+}
+
+.uneaten-burger{
+    float: left;
+    width: 275px;
+    margin: 5px;
+}
+
+
+.burger-area{
+    clear: both;
+}
+
+.create-burger{
+    padding-top: 20px;
+    clear: both;
+    text-align: center;
+}
+
+.form-group{
+    padding: 10px;
+}

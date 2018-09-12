@@ -26,8 +26,8 @@ function objToSql(ob) {
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
+        
+        //This "0" or 'value' is what is breaking it
         arr.push(key + "=" + value);
       }
     }
