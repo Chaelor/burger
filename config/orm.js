@@ -46,7 +46,7 @@ const orm = {
         });
     },
     createOne: function (tableInput, cols, vals, cb) {
-        var queryString = `INSERT INTO ${tableInput}(${cols.toString()}) VALUES(${printQuestionMarks(vals.length)});`;
+        var queryString = `INSERT INTO ${tableInput} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)}) `;
 
         console.log(queryString);
 
@@ -66,6 +66,17 @@ const orm = {
 
             cb(res);
         });
+    },
+    deleteOne: function(tableInput, condition, cb){
+        var queryString = `DELETE FROM ${tableInput} WHERE ${condition}`;
+
+        console.log(queryString);
+
+        connection.query(queryString, (err, res) => {
+            if (err) throw err;
+
+            cb(res);
+        })
     }
 }
 
