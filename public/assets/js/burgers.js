@@ -37,6 +37,7 @@ function changeListener(event) {
     var id = this.dataset.id;
     var newDevoured = this.dataset.newdevoured;
 
+    console.log(newDevoured);
     //data to pass for the devoured state
     var newState = {
         devoured: newDevoured
@@ -45,7 +46,7 @@ function changeListener(event) {
     console.log(newState);
 
     fetch(`/api/burgers/${id}`, {
-        type: 'PUT',
+        method: 'PUT',
         data: newState
     }).then((response) => {
         response.json();
@@ -67,13 +68,15 @@ function addListener(event) {
     };
 
     console.log(newBurger);
-
     fetch('/api/burgers', {
-        type: 'POST',
-        data: newBurger
+        method: 'POST',
+        headers: {
+            "Content-type" : "application/json; charset=utf-8"
+        },
+        body: JSON.stringify(newBurger)
     }).then((response) => {
         response.json();
         console.log(`Made new burger: ${newBurger}`);
-        //location.reload();
+        location.reload();
     })
 }

@@ -16,8 +16,12 @@ router.get("/", function(req, res){
 
 //Post a new (probably yucky beef) burger
 router.post("/api/burgers", function(req, res){
-    burger.createOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(res){
-        res.json({id: res.insertId});
+    burger.createOne([
+        "burger_name", "devoured"
+    ], [
+        req.body.burger_name, req.body.devoured
+    ], function(result){
+        res.json({id: result.insertId});
     });
 });
 
