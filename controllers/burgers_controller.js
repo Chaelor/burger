@@ -15,7 +15,7 @@ router.get("/", function(req, res){
 });
 
 //Post a new (probably yucky beef) burger
-router.post("/api/burgers", function(req, res){
+router.post('/api/burgers', function(req, res){
     burger.createOne([
         "burger_name", "devoured"
     ], [
@@ -26,7 +26,7 @@ router.post("/api/burgers", function(req, res){
 });
 
 //Update a devoured state of a burger
-router.put("/api/burgers/:id", function(req, res) {
+router.put('/api/burgers/:id', function(req, res) {
     var condition = `id = ${req.params.id}`;
 
     console.log("condition: " + condition);
